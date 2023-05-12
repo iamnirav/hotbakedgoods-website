@@ -6,21 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/base.css">
-  <title>{% if page.title %}{{ page.title }} · {% endif %}The Curiosities Jazz Band</title>
+  <title>{% if page.title %}{{ page.title }} - {% endif %}The Hot Baked Goods</title>
 </head>
 
 <body>
   <header id="site-nav">
     <nav>
+      <a class="home-link" href="./">The Hot Baked Goods</a>
       <ul>
-        <li id="page-logo"><a href="./"><img src="images/logo-transparent.png"
-              alt="The Curiosities Jazz Band logo" /></a></li>
-        <li class="nav-link"><a href="about.html">About</a></li>
-        <li class="nav-link"><a href="media.html">Media</a></li>
-        <li class="nav-link after-logo"><a href="albums.html">Albums</a></li>
-        <li class="nav-link after-logo"><a href="contact.html">Contact</a></li>
+        <li class="nav-link {% if page.title == 'About' %}active{% endif %}"><a href="about.html">About</a></li>
+        <li class="nav-link {% if page.title == 'Music' %}active{% endif %}"><a href="music.html">Music</a></li>
+        <li class="nav-link {% if page.title == 'Clients' %}active{% endif %}"><a href="clients.html">Clients</a></li>
+        <li class="nav-link {% if page.title == 'Contact' %}active{% endif %}"><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
     <a href="#site-nav" class="open-nav-btn">≡</a>

@@ -1,22 +1,20 @@
 /* elements */
 
 html {
-  --color-cream: #F2EDD5;
-  --color-purple-dark: #180E37;
-  --color-purple-light: #2C2C4B;
-  --font-family-primary: 'Montserrat', Verdana, sans-serif;
+  --font-family-primary: 'Helvetica Neue', Helvetica, Verdana, sans-serif;
+  --font-family-secondary: 'Sofia Sans Extra Condensed', sans-serif;
+  --color-accent:  #4d0000;
 
-  background-color: black;
+  background-color: white;
 }
 
 body {
   margin: 0;
   font-family: var(--font-family-primary);
-  font-weight: 300;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 1.5;
-  color: var(--color-cream);
-  background-color: var(--color-purple-dark);
+  color: black;
 }
 
 ul {
@@ -25,21 +23,26 @@ ul {
   padding: 0;
 }
 
+p {
+  letter-spacing: .5px;
+}
+
 p a {
-  color: var(--color-cream);
+  color: var(--color-accent);
+  border-bottom: 1px solid rgba(77, 0, 0, 0.3);
+  text-decoration: none;
 }
 
 h2 {
-  font-family: var(--font-family-primary);
-  font-weight: 600;
+  font-family: var(--font-family-secondary);
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 24px;
+  font-size: 36px;
 }
 
 h3 {
-  font-family: var(--font-family-primary);
-  font-weight: 300;
+  font-family: var(--font-family-secondary);
+  text-transform: uppercase;
   font-size: 24px;
 }
 
@@ -50,43 +53,42 @@ header {
 }
 
 header a {
-  color: var(--color-cream);
   text-decoration: none;
-}
-
-#page-logo {
-  order: 1;
-  display: block;
-  height: 128px;
-  width: 256px;
-}
-
-#page-logo img {
-  object-fit: contain;
-  height: 100%;
-  width: 100%;
 }
 
 nav ul {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   max-width: 1440px;
   margin: 0 auto;
 }
 
+nav .home-link {
+  display: block;
+  font-family: var(--font-family-secondary);
+  text-transform: uppercase;
+  font-size: 40px;
+  text-align: center;
+  color: black;
+  letter-spacing: 1px;
+}
+
 nav .nav-link {
-  padding: 18px;
+  padding: 8px;
   font-family: var(--font-family-primary);
-  font-weight: 600;
-  font-size: 16px;
-  text-shadow: 0 0 4px rgba(0, 0, 0, .25);
+  font-weight: 500;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-nav .nav-link.after-logo {
-  order: 2;
+nav .nav-link a {
+  color: rgba(82, 82, 82, 0.7);
+}
+
+nav .nav-link.active a {
+  color: var(--color-accent);
 }
 
 header .open-nav-btn,
@@ -117,54 +119,57 @@ section.full-bleed {
   max-width: unset;
   height: 600px;
   background-size: cover;
-  background-position: center 35%;
+  background-position: center;
 }
 
-section > img {
+.centered {
+  text-align: center;
+}
+
+section>img {
   width: 100%;
-  height: 400px;
   object-fit: cover;
 }
 
 ul.gallery {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 12px;
+  gap: 16px;
 }
 
-ul.gallery li {
-  position: relative;
+ul.gallery.col-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+ul.gallery.col-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+ul.gallery.col-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 ul.gallery img {
   width: 100%;
-  display: block;
-  border-radius: 4px;
-  object-fit: cover;
-  object-position: center;
-  height: 192px;
 }
 
-ul.gallery h2 {
-  color: white;
-  position: absolute;
-  top: 0;
+ul.gallery iframe {
+  aspect-ratio: 16 / 9;
   width: 100%;
-  height: 100%;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 0 0 12px #666;
 }
 
-ul.gallery a {
-  color: #F2EDD5;
+a.button {
+  color: var(--color-accent);
   text-decoration: none;
-}
-
-ul.gallery a:hover h2 {
-  text-shadow: 0 0 24px #000;
+  border: 2px solid var(--color-accent);
+  border-radius: 3px;
+  padding: 21px 34px;
+  font-family: var(--font-family-primary);
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
 }
 
 /* footer */
@@ -212,7 +217,7 @@ footer img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--color-purple-dark);
+    background: white;
     z-index: 1;
   }
 
@@ -237,11 +242,9 @@ footer img {
     height: 300px;
   }
 
-  section > img {
-    height: 200px;
-  }
-
-  ul.gallery {
+  ul.gallery.col-2,
+  ul.gallery.col-3,
+  ul.gallery.col-4 {
     grid-template-columns: 1fr;
   }
 }
