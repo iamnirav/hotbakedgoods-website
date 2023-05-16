@@ -36,7 +36,7 @@ p a {
 h2 {
   font-family: var(--font-family-secondary);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: .5px;
   font-size: 36px;
 }
 
@@ -50,6 +50,7 @@ h3 {
 
 header {
   padding: 12px;
+  margin: 48px 0;
 }
 
 header a {
@@ -71,7 +72,7 @@ nav .home-link {
   font-size: 40px;
   text-align: center;
   color: black;
-  letter-spacing: 1px;
+  letter-spacing: .5px;
 }
 
 nav .nav-link {
@@ -105,7 +106,7 @@ header .close-nav-btn {
 
 section {
   max-width: 1024px;
-  margin: 24px auto;
+  margin: 48px auto;
   padding: 0 12px;
   box-sizing: border-box;
 }
@@ -115,8 +116,6 @@ section.narrow {
 }
 
 section.full-bleed {
-  padding: 0;
-  margin: 0;
   max-width: unset;
   height: 700px;
   background-size: cover;
@@ -151,7 +150,7 @@ ul.grid.col-4 {
 }
 
 ul.grid.spaced {
-  gap: 64px;
+  gap: 48px;
 }
 
 ul.grid img {
@@ -179,6 +178,10 @@ a.button {
 
 /* footer */
 
+footer {
+  margin-bottom: 48px;
+}
+
 footer ul {
   padding: 24px;
   display: flex;
@@ -187,7 +190,7 @@ footer ul {
 }
 
 footer li {
-  margin: 0 18px;
+  margin: 0 12px;
   font-size: 32px;
   background-color: black;
   height: 42px;
