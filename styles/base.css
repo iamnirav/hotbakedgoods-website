@@ -24,7 +24,8 @@ ul {
 }
 
 p {
-  letter-spacing: .25px;
+  letter-spacing: .15px;
+  color: #333;
 }
 
 p a {
